@@ -1,0 +1,20 @@
+_target_: lightning_classes.models.ligmod.LigMod
+
+optimizer:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.001
+  weight_decay: 0.0
+
+scheduler:
+  _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+  _partial_: true
+  mode: min
+  factor: 0.1
+  patience: 10
+
+net:
+  _target_: lightning_classes.models.components.simpledense.SimpleDenseNet
+  input_size: 784
+  lin1_size: 64
+  output_size: 2

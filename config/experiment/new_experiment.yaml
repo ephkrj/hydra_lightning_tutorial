@@ -1,0 +1,5 @@
+# @package _global_
+defaults:
+  - override /model: experimental_model #some other yaml config file with cofigurations for the experiment.
+
+logger.experiment_name: experimental_model
